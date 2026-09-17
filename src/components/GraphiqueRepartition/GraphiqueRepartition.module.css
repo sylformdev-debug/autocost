@@ -1,0 +1,18 @@
+.bloc {
+  width: 100%;
+  min-width: 0;
+}
+
+.note,
+.indisponible {
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+  margin-top: var(--e-3);
+}
+
+.indisponible {
+  padding: var(--e-5);
+  border: 1px dashed var(--bordure-neutre);
+  border-radius: var(--r-md);
+  text-align: center;
+}

@@ -1,0 +1,60 @@
+.bloc {
+  margin-top: var(--e-4);
+  border-top: 1px solid var(--bordure-neutre);
+  padding-top: var(--e-3);
+}
+
+.resume {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--texte-3);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition);
+}
+
+.resume::-webkit-details-marker {
+  display: none;
+}
+
+.resume:hover {
+  color: var(--or-clair);
+}
+
+.defilement {
+  margin-top: var(--e-3);
+  overflow-x: auto;
+}
+
+.tableau {
+  font-size: var(--t-sm);
+  min-width: 380px;
+}
+
+.tableau th,
+.tableau td {
+  padding: 0.42rem var(--e-3);
+  text-align: right;
+  border-bottom: 1px solid var(--bordure-neutre);
+  white-space: nowrap;
+}
+
+.tableau thead th {
+  font-weight: 500;
+  font-size: var(--t-xs);
+  color: var(--texte-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tableau th[scope='row'] {
+  text-align: left;
+  font-weight: 500;
+  color: var(--texte);
+}
+
+.tableau thead th:first-child {
+  text-align: left;
+}

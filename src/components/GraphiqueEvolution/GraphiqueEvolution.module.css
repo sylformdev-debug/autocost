@@ -1,0 +1,13 @@
+.bloc {
+  width: 100%;
+  min-width: 0;
+}
+
+.indisponible {
+  padding: var(--e-5);
+  border: 1px dashed var(--bordure-neutre);
+  border-radius: var(--r-md);
+  text-align: center;
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+}

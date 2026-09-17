@@ -1,0 +1,35 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--e-3);
+  min-height: 62vh;
+  padding-block: var(--e-8);
+}
+
+.code {
+  font-family: var(--police-titre);
+  font-size: var(--t-3xl);
+  line-height: 1;
+  color: var(--or);
+}
+
+.titre {
+  font-size: var(--t-xl);
+}
+
+.texte {
+  max-width: 44ch;
+  color: var(--texte-2);
+  font-size: var(--t-base);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}

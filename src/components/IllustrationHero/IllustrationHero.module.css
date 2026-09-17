@@ -1,0 +1,55 @@
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caisse {
+  fill: rgba(201, 162, 39, 0.045);
+  stroke: var(--or);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}
+
+.vitrage {
+  fill: rgba(201, 162, 39, 0.12);
+  stroke: var(--or);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.trait {
+  fill: none;
+  stroke: var(--or);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.traitFin {
+  stroke: var(--or-discret);
+  stroke-width: 1.1;
+}
+
+.pneu {
+  fill: var(--noir-2);
+  stroke: var(--or);
+  stroke-width: 1.8;
+}
+
+.jante {
+  fill: none;
+  stroke: var(--or-discret);
+  stroke-width: 1.2;
+}
+
+.moyeu {
+  fill: none;
+  stroke: var(--or-discret);
+  stroke-width: 1.2;
+}
+
+.rayon {
+  stroke: var(--or-discret);
+  stroke-width: 1.1;
+  opacity: 0.75;
+}

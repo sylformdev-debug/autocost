@@ -1,0 +1,168 @@
+.grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--e-5);
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  min-width: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texte-2);
+}
+
+.label svg {
+  color: var(--or-discret);
+}
+
+.saisie {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: 0 var(--e-3);
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  transition: border-color var(--transition);
+}
+
+.saisie:focus-within {
+  border-color: var(--bordure-forte);
+}
+
+.enErreur {
+  border-color: rgba(224, 107, 92, 0.55);
+}
+
+.saisie input,
+.saisie select {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 0.62rem 0;
+  background: none;
+  border: none;
+  color: var(--texte);
+  font-size: var(--t-md);
+  font-weight: 500;
+}
+
+.saisie input:focus,
+.saisie select:focus {
+  outline: none;
+}
+
+/* Masque les flèches natives : le curseur et la saisie suffisent. */
+.saisie input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.saisie input[type='number']::-webkit-outer-spin-button,
+.saisie input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--texte-2) 50%),
+    linear-gradient(135deg, var(--texte-2) 50%, transparent 50%);
+  background-position: right 2px center, right 7px center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: var(--e-5);
+}
+
+.select option {
+  background-color: var(--noir-2);
+  color: var(--texte);
+}
+
+.unite {
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+  white-space: nowrap;
+}
+
+/* — Curseur — */
+.curseur {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  margin: var(--e-2) 0 0;
+  background: var(--bordure-neutre);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.curseur::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background: var(--or);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.curseur::-webkit-slider-thumb:hover {
+  background: var(--or-clair);
+}
+
+.curseur::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  background: var(--or);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* — Messages — */
+.aide,
+.alerte,
+.erreur {
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  min-height: 1.1rem;
+}
+
+.aide {
+  color: var(--texte-3);
+}
+
+.alerte {
+  color: var(--alerte);
+}
+
+.erreur {
+  color: var(--erreur);
+}
+
+@media (max-width: 860px) {
+  .grille {
+    grid-template-columns: 1fr 1fr;
+  }
+  .champ:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .grille {
+    grid-template-columns: 1fr;
+    gap: var(--e-4);
+  }
+}

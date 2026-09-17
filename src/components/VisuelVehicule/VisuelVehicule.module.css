@@ -1,0 +1,37 @@
+.cadre {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Réserve la place avant le chargement : aucun saut de mise en page. */
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse 70% 90% at 50% 100%,
+    rgba(201, 162, 39, 0.07),
+    transparent 70%
+  );
+  border-radius: var(--r-sm);
+}
+
+.fiche {
+  aspect-ratio: 16 / 6;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.illustration {
+  width: 88%;
+  max-width: 260px;
+}
+
+.fiche .illustration {
+  width: 70%;
+  max-width: 420px;
+}

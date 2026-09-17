@@ -1,0 +1,62 @@
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.sol {
+  stroke: var(--bordure-neutre);
+  stroke-width: 1;
+}
+
+.caisse {
+  fill: rgba(201, 162, 39, 0.05);
+  stroke: var(--or-discret);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  transition: stroke var(--transition), fill var(--transition);
+}
+
+.montant {
+  stroke: var(--or-discret);
+  stroke-width: 1.2;
+  transition: stroke var(--transition);
+}
+
+.vitrage {
+  fill: rgba(201, 162, 39, 0.1);
+  stroke: var(--or-discret);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  transition: stroke var(--transition);
+}
+
+/* Les roues sont dessinées après la caisse : leur remplissage masque la
+   ligne de bas de caisse, ce qui évite un trait qui traverse le pneu. */
+.pneu {
+  fill: var(--noir-2);
+  stroke: var(--or-discret);
+  stroke-width: 1.6;
+  transition: stroke var(--transition);
+}
+
+.jante {
+  fill: none;
+  stroke: var(--or-discret);
+  stroke-width: 1.1;
+  opacity: 0.7;
+}
+
+/* — Nuance par motorisation : l'électrique tire vers l'or clair — */
+.electrique .caisse,
+.electrique .vitrage,
+.electrique .montant,
+.electrique .pneu,
+.electrique .jante {
+  stroke: var(--or);
+}
+
+.electrique .caisse {
+  fill: rgba(201, 162, 39, 0.09);
+}

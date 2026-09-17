@@ -1,0 +1,36 @@
+.cadre {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--r-md);
+}
+
+/* Le cadre n'impose son format qu'à une photo : l'illustration vectorielle
+   garde ses proportions propres et n'a rien à recadrer. */
+.cadre:has(.photo) {
+  aspect-ratio: 21 / 10;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Voile discret : garde la photo dans la tonalité sombre du site et préserve
+   le contraste de l'aperçu chiffré placé juste en dessous.
+   Pour une photo sans retouche, supprimez ce bloc. */
+.cadre:has(.photo)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.12) 0%,
+    rgba(8, 8, 8, 0.05) 45%,
+    rgba(8, 8, 8, 0.55) 100%
+  );
+  pointer-events: none;
+}

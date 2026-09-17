@@ -1,0 +1,35 @@
+.bloc {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--e-3);
+  padding: var(--e-4) var(--e-5);
+  background-color: var(--erreur-fond);
+  border: 1px solid rgba(224, 107, 92, 0.32);
+  border-radius: var(--r-md);
+}
+
+.icone {
+  color: var(--erreur);
+  margin-top: 2px;
+}
+
+.texte {
+  flex: 1;
+  min-width: 0;
+}
+
+.titre {
+  font-weight: 600;
+  margin-bottom: var(--e-1);
+}
+
+.message {
+  color: var(--texte);
+  font-size: var(--t-base);
+}
+
+@media (max-width: 520px) {
+  .bloc {
+    flex-wrap: wrap;
+  }
+}

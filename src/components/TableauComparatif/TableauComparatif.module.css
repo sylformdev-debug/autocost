@@ -1,0 +1,106 @@
+.enveloppe {
+  overflow-x: auto;
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  background-color: var(--noir-2);
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableau {
+  min-width: 660px;
+  font-size: var(--t-base);
+}
+
+.tableau thead th {
+  padding: var(--e-3) var(--e-4);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+  text-align: left;
+  background-color: var(--noir-2);
+  border-bottom: 1px solid var(--bordure);
+  white-space: nowrap;
+}
+
+.tableau tbody th,
+.tableau tbody td {
+  padding: var(--e-4);
+  border-bottom: 1px solid var(--bordure-neutre);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.tableau tbody tr:last-child th,
+.tableau tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tableau tbody tr {
+  transition: background-color var(--transition);
+}
+
+.tableau tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.022);
+}
+
+.vehicule {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+  font-weight: 500;
+  background-color: var(--noir-2);
+}
+
+.nom {
+  display: block;
+  color: var(--texte);
+}
+
+.marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 3px;
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--or);
+  letter-spacing: 0.02em;
+}
+
+.nombre {
+  text-align: right;
+}
+
+.fort {
+  font-weight: 600;
+}
+
+.ecart {
+  color: var(--texte-3);
+  font-size: var(--t-sm);
+}
+
+/* — Ligne recommandée : filet or à gauche, fond très légèrement relevé — */
+.ligneRecommandee th,
+.ligneRecommandee td {
+  background-color: rgba(201, 162, 39, 0.055);
+}
+
+.ligneRecommandee .vehicule {
+  box-shadow: inset 2px 0 0 var(--or);
+}
+
+.ligneRecommandee .fort {
+  color: var(--or-clair);
+}
+
+@media (max-width: 720px) {
+  .tableau tbody th,
+  .tableau tbody td,
+  .tableau thead th {
+    padding: var(--e-3);
+  }
+}

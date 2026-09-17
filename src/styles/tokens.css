@@ -1,0 +1,81 @@
+/**
+ * Jetons de design — source unique de l'identité visuelle.
+ * Aucune valeur de couleur, d'espacement ou de rayon n'est écrite en dur
+ * ailleurs dans le projet.
+ */
+:root {
+  /* — Fonds — */
+  --noir: #080808;
+  --noir-2: #111111;
+  --surface: #171717;
+
+  /* — Or — */
+  --or: #c9a227;
+  --or-clair: #e4c766;
+  --or-discret: #9f8120;
+  --or-voile: rgba(201, 162, 39, 0.08);
+
+  /* — Texte — */
+  --texte: #f5f5f5;
+  --texte-2: #a7a7a7;
+  /* #6f6f6f tombait à 3,6:1 sur les surfaces sombres — sous le seuil WCAG AA
+     alors que ce ton porte de vrais textes (aides, unités, écarts). */
+  --texte-3: #8a8a8a;
+
+  /* — Lignes — */
+  --bordure: rgba(201, 162, 39, 0.18);
+  --bordure-neutre: rgba(255, 255, 255, 0.07);
+  --bordure-forte: rgba(201, 162, 39, 0.42);
+
+  /* — États — */
+  --erreur: #e06b5c;
+  --erreur-fond: rgba(224, 107, 92, 0.1);
+  --alerte: #d9a441;
+  --alerte-fond: rgba(217, 164, 65, 0.09);
+
+  /* — Typographie — */
+  --police-titre: 'Instrument Serif', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --police: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: 1.375rem;
+  --t-xl: 1.875rem;
+  --t-2xl: 2.5rem;
+  --t-3xl: clamp(2.5rem, 6vw, 4.25rem);
+
+  /* — Espacement (base 4px) — */
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+  --e-8: 4rem;
+  --e-9: 6rem;
+
+  /* — Rayons : discrets, jamais de « bulles » — */
+  --r-sm: 3px;
+  --r-md: 5px;
+  --r-lg: 8px;
+
+  /* — Mouvement : rapide et sobre — */
+  --transition: 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  --transition-lente: 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* — Mise en page — */
+  --largeur-max: 1180px;
+  --gouttiere: clamp(1rem, 4vw, 2.5rem);
+  --hauteur-entete: 68px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 1ms;
+    --transition-lente: 1ms;
+  }
+}

@@ -1,0 +1,82 @@
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.bouton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* — Tailles — */
+.petit {
+  padding: 0.4rem 0.75rem;
+  font-size: var(--t-sm);
+}
+.moyen {
+  padding: 0.6rem 1.1rem;
+  font-size: var(--t-base);
+}
+.grand {
+  padding: 0.8rem 1.6rem;
+  font-size: var(--t-md);
+}
+
+.pleineLargeur {
+  width: 100%;
+}
+
+/* — Primaire : or plein, réservé à l'action principale d'un écran — */
+.primaire {
+  background-color: var(--or);
+  color: #100c00;
+  font-weight: 600;
+}
+.primaire:hover:not(:disabled) {
+  background-color: var(--or-clair);
+}
+.primaire:disabled {
+  background-color: #2a2a2a;
+  color: var(--texte-3);
+}
+
+/* — Secondaire : filet or sur noir — */
+.secondaire {
+  background-color: transparent;
+  border-color: var(--bordure-forte);
+  color: var(--or-clair);
+}
+.secondaire:hover:not(:disabled) {
+  background-color: var(--or-voile);
+  border-color: var(--or);
+}
+.secondaire:disabled {
+  border-color: var(--bordure-neutre);
+  color: var(--texte-3);
+}
+
+/* — Discret : sans cadre, pour les actions secondaires — */
+.discret {
+  background-color: transparent;
+  color: var(--texte-2);
+  padding-inline: 0.6rem;
+}
+.discret:hover:not(:disabled) {
+  color: var(--texte);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.discret:disabled {
+  color: var(--texte-3);
+}

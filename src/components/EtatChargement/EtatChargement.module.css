@@ -1,0 +1,80 @@
+@keyframes pulsation {
+  0%,
+  100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+.squelette {
+  display: block;
+  background: linear-gradient(90deg, #1a1a1a, #232323, #1a1a1a);
+  animation: pulsation 1.4s ease-in-out infinite;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: var(--e-4);
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-5);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  background-color: var(--noir-2);
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-3);
+}
+
+.resultats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+}
+
+.indicateur {
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rond {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(201, 162, 39, 0.28);
+  border-top-color: var(--or-clair);
+  border-radius: 50%;
+  animation: rotation 700ms linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .squelette,
+  .rond {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+  .rond {
+    border-top-color: var(--or-clair);
+  }
+}
+
+@media (max-width: 640px) {
+  .ligne {
+    grid-template-columns: 1fr;
+  }
+}

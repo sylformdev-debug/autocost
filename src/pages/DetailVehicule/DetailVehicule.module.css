@@ -1,0 +1,123 @@
+.page {
+  padding-top: var(--e-6);
+  padding-bottom: var(--e-8);
+  min-height: 60vh;
+}
+
+.retour {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texte-2);
+  transition: color var(--transition);
+}
+
+.retour:hover {
+  color: var(--or-clair);
+}
+
+.squelette {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+  margin-top: var(--e-6);
+  max-width: 700px;
+}
+
+.erreur {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e-4);
+  margin-top: var(--e-6);
+  max-width: 640px;
+}
+
+.fiche {
+  margin-top: var(--e-6);
+  max-width: 760px;
+}
+
+.marque {
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+}
+
+.modele {
+  margin-top: var(--e-2);
+  font-size: var(--t-2xl);
+  color: var(--texte);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+}
+
+.visuel {
+  margin-top: var(--e-5);
+  padding: var(--e-4);
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-lg);
+}
+
+.caracteristiques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--e-5);
+  margin: var(--e-6) 0 0;
+  padding: var(--e-5);
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-lg);
+}
+
+.caracteristiques dt {
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+  margin-bottom: var(--e-1);
+}
+
+.caracteristiques dd {
+  margin: 0;
+  font-size: var(--t-md);
+  font-weight: 500;
+  color: var(--texte);
+}
+
+.valeurForte {
+  font-size: var(--t-lg) !important;
+  color: var(--or-clair) !important;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+  margin-top: var(--e-5);
+}
+
+.note,
+.avertissement {
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+}
+
+.avertissement {
+  margin-top: var(--e-5);
+  padding-top: var(--e-4);
+  border-top: 1px solid var(--bordure-neutre);
+  max-width: 62ch;
+}

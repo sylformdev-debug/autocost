@@ -1,0 +1,29 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+}
+
+.marque {
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--or);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.texte {
+  font-family: var(--police-titre);
+  font-size: 1.35rem;
+  letter-spacing: 0.005em;
+  color: var(--texte);
+  line-height: 1;
+}
+
+.accent {
+  color: var(--or);
+}
+
+.grand .texte {
+  font-size: 1.7rem;
+}

@@ -1,0 +1,175 @@
+.carte {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.carte:hover:not(.desactivee) {
+  border-color: rgba(201, 162, 39, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Focus clavier : la case est masquée, on stylise donc la carte parente. */
+.carte:has(input:focus-visible) {
+  outline: 2px solid var(--or-clair);
+  outline-offset: 2px;
+}
+
+.selectionnee {
+  background-color: var(--surface);
+  border-color: var(--or);
+}
+
+.selectionnee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-md);
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 39, 0.45);
+  pointer-events: none;
+}
+
+.desactivee {
+  opacity: 0.42;
+}
+
+.desactivee .zone {
+  cursor: not-allowed;
+}
+
+.zone {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--e-2);
+  padding: var(--e-4) var(--e-5);
+  cursor: pointer;
+}
+
+/* La zone cliquable couvre toute la carte sans englober le lien « Détails ». */
+.zone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-md);
+}
+
+.marque {
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+}
+
+.modele {
+  font-family: var(--police);
+  font-size: var(--t-md);
+  font-weight: 500;
+  color: var(--texte);
+  letter-spacing: -0.01em;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2);
+  margin-top: var(--e-1);
+}
+
+.annee {
+  font-size: var(--t-xs);
+  color: var(--texte-3);
+}
+
+.chiffres {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-3);
+  margin-top: auto;
+  padding-top: var(--e-4);
+  padding-top: var(--e-4);
+  border-top: 1px solid var(--bordure-neutre);
+}
+
+.chiffre {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--t-xs);
+  color: var(--texte-3);
+}
+
+.chiffre strong {
+  font-size: var(--t-base);
+  font-weight: 600;
+  color: var(--texte);
+}
+
+.selectionnee .chiffre strong {
+  color: var(--or-clair);
+}
+
+/* — Marque de sélection — */
+.coche {
+  position: absolute;
+  top: var(--e-4);
+  right: var(--e-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--bordure-neutre);
+  border-radius: 3px;
+  color: transparent;
+  transition: all var(--transition);
+}
+
+.selectionnee .coche {
+  background-color: var(--or);
+  border-color: var(--or);
+  color: #100c00;
+}
+
+/* — Lien vers la fiche : au-dessus de la zone cliquable — */
+.lienDetail {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0 var(--e-5) var(--e-4);
+  font-size: var(--t-xs);
+  color: var(--texte-3);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.lienDetail:hover {
+  color: var(--or-clair);
+  border-bottom-color: rgba(201, 162, 39, 0.4);
+}
+
+@media (max-width: 400px) {
+  .zone {
+    padding: var(--e-4);
+  }
+  .lienDetail {
+    margin-inline: var(--e-4);
+  }
+}

@@ -1,0 +1,122 @@
+.bloc {
+  position: relative;
+  padding: var(--e-6);
+  background:
+    linear-gradient(180deg, rgba(201, 162, 39, 0.055), transparent 62%),
+    var(--surface);
+  border: 1px solid var(--bordure-forte);
+  border-radius: var(--r-lg);
+}
+
+/* Filet or en haut — le seul « ornement » de la page, il marque la hiérarchie. */
+.bloc::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: var(--e-6);
+  right: var(--e-6);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--or), transparent);
+}
+
+.entete {
+  margin-bottom: var(--e-4);
+}
+
+.etiquette {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+.corps {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: var(--e-6);
+  align-items: start;
+}
+
+.principal {
+  min-width: 0;
+}
+
+.nom {
+  font-family: var(--police-titre);
+  font-size: var(--t-2xl);
+  line-height: 1.05;
+  color: var(--texte);
+  margin-bottom: var(--e-3);
+}
+
+.explication {
+  font-size: var(--t-base);
+  color: var(--texte-2);
+  max-width: 52ch;
+}
+
+.explication strong {
+  color: var(--or-clair);
+  font-weight: 600;
+}
+
+.chiffres {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin: 0;
+  padding-left: var(--e-6);
+  border-left: 1px solid var(--bordure);
+}
+
+.chiffres > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-4);
+}
+
+.chiffres dt {
+  font-size: var(--t-sm);
+  color: var(--texte-2);
+}
+
+.chiffres dd {
+  margin: 0;
+  font-size: var(--t-md);
+  font-weight: 600;
+  color: var(--texte);
+}
+
+.valeurForte {
+  font-size: var(--t-xl) !important;
+  color: var(--or-clair) !important;
+  line-height: 1.1;
+}
+
+@media (max-width: 860px) {
+  .corps {
+    grid-template-columns: 1fr;
+    gap: var(--e-5);
+  }
+  .chiffres {
+    padding-left: 0;
+    padding-top: var(--e-4);
+    border-left: none;
+    border-top: 1px solid var(--bordure);
+  }
+}
+
+@media (max-width: 480px) {
+  .bloc {
+    padding: var(--e-5) var(--e-4);
+  }
+  .bloc::before {
+    left: var(--e-4);
+    right: var(--e-4);
+  }
+}

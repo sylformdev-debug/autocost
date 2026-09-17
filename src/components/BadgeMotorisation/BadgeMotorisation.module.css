@@ -1,0 +1,28 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid var(--bordure-neutre);
+  border-radius: 999px;
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--texte-2);
+  white-space: nowrap;
+}
+
+.petit {
+  font-size: 0.6875rem;
+  padding: 0.1rem 0.42rem;
+}
+
+.electrique {
+  color: var(--or-clair);
+  border-color: rgba(201, 162, 39, 0.34);
+}
+
+.hybride {
+  color: #a9bda4;
+  border-color: rgba(169, 189, 164, 0.26);
+}

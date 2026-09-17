@@ -1,0 +1,231 @@
+.bloc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+}
+
+.barre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+}
+
+.recherche {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  flex: 1 1 260px;
+  max-width: 340px;
+  padding: 0 var(--e-3);
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  color: var(--texte-3);
+  transition: border-color var(--transition);
+}
+
+.recherche:focus-within {
+  border-color: var(--bordure-forte);
+  color: var(--or);
+}
+
+.recherche input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0;
+  background: none;
+  border: none;
+  color: var(--texte);
+  font-size: var(--t-sm);
+}
+
+.recherche input::placeholder {
+  color: var(--texte-3);
+}
+
+.recherche input:focus {
+  outline: none;
+}
+
+.recherche input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.effacer {
+  display: inline-flex;
+  padding: 2px;
+  background: none;
+  border: none;
+  color: var(--texte-3);
+  border-radius: var(--r-sm);
+}
+
+.effacer:hover {
+  color: var(--texte);
+}
+
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-1);
+}
+
+.filtre {
+  padding: 0.38rem 0.7rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  font-size: var(--t-sm);
+  color: var(--texte-2);
+  transition: all var(--transition);
+}
+
+.filtre:hover:not(:disabled) {
+  color: var(--texte);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.filtreActif,
+.filtreActif:hover:not(:disabled) {
+  color: var(--or-clair);
+  border-color: var(--bordure-forte);
+  background-color: var(--or-voile);
+}
+
+/* — Résumé de la sélection — */
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-3) var(--e-4);
+  background-color: var(--noir-2);
+  border: 1px solid var(--bordure);
+  border-radius: var(--r-md);
+}
+
+.selectionTitre {
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texte-3);
+}
+
+.puces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  flex: 1;
+}
+
+.puce {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: 0.22rem 0.3rem 0.22rem 0.6rem;
+  background-color: var(--or-voile);
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  font-size: var(--t-sm);
+  color: var(--texte);
+}
+
+.puce button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: var(--texte-2);
+  transition: all var(--transition);
+}
+
+.puce button:hover {
+  background-color: rgba(201, 162, 39, 0.24);
+  color: var(--texte);
+}
+
+.vider {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: var(--t-sm);
+  color: var(--texte-3);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.vider:hover {
+  color: var(--texte);
+  border-bottom-color: var(--bordure-neutre);
+}
+
+/* — Grille — */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: var(--e-4);
+}
+
+/* Les cartes d'une même rangée doivent finir à la même hauteur, même quand une
+   consommation passe sur deux lignes. */
+.grille > li {
+  display: flex;
+}
+
+/* — Dépliage du catalogue — */
+.deplier {
+  align-self: center;
+  padding: 0.5rem 1.1rem;
+  background: none;
+  border: 1px solid var(--bordure-neutre);
+  border-radius: var(--r-md);
+  font-size: var(--t-sm);
+  color: var(--texte-2);
+  transition: all var(--transition);
+}
+
+.deplier:hover {
+  color: var(--or-clair);
+  border-color: var(--bordure-forte);
+  background-color: var(--or-voile);
+}
+
+/* — État vide — */
+.vide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-8) var(--e-4);
+  text-align: center;
+  color: var(--texte-3);
+  border: 1px dashed var(--bordure-neutre);
+  border-radius: var(--r-md);
+}
+
+.videTitre {
+  font-size: var(--t-md);
+  color: var(--texte);
+}
+
+.videTexte {
+  font-size: var(--t-sm);
+  max-width: 34ch;
+}
+
+@media (max-width: 560px) {
+  .recherche {
+    max-width: none;
+  }
+  .grille {
+    grid-template-columns: 1fr;
+  }
+}
